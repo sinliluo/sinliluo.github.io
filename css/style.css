@@ -131,9 +131,10 @@ a {
   text-decoration: none;
 }
 .outer {
-  max-width: 920px;
+/*max-width: (column-width + gutter-width) * columns + gutter-width*/
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 .outer:before,
 .outer:after {
@@ -213,9 +214,18 @@ a {
   #wrap #header .logo-wrap {
     font-size: 26px;
   }
-  #wrap .outer {
+  #wrap >.outer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 50px 40px;
     overflow: auto;
     height: 100%;
+  }
+  #wrap >.outer #footer-info {
+position
+    display: block;
+    bottom: 0;
   }
 }
 #header {
