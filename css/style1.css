@@ -1175,6 +1175,54 @@ a.article-title:hover {
 #page-nav span {
   margin: 0 5px;
 }
+.archives-list-header {
+  margin-top: 20px;
+  font-size: 2em;
+  line-height: 1.2em;
+  letter-spacing: 0.05em;
+  padding-bottom: 15px;
+}
+.archives-list >.archive-year-wrap >h3 {
+  font-size: 1.2em;
+  text-indent: 4px;
+  border-radius: 4px;
+  padding: 6px 15px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  background-color: #b9d3ee;
+  -webkit-box-shadow: 0px 5px 5px #9fb6cd;
+  box-shadow: 0px 5px 5px #9fb6cd;
+  border-left: 6px solid #1874cd;
+}
+.archives-list >.archives-list-content ul {
+  padding-left: 20px;
+}
+.archives-list >.archives-list-content ul li {
+  line-height: 35px;
+  height: 35px;
+}
+.archives-list >.archives-list-content ul li:before,
+.archives-list >.archives-list-content ul li:after {
+  content: "";
+  display: table;
+}
+.archives-list >.archives-list-content ul li:after {
+  clear: both;
+}
+.archives-list >.archives-list-content ul li >.date {
+  margin-right: 10px;
+}
+.archives-list >.archives-list-content ul li >.date a {
+  border-left: 2px solid #1ae7f2;
+  padding-left: 10px;
+  color: #a5a1a1;
+}
+.archives-list >.archives-list-content ul li >.title h3 a {
+  color: #4b7896;
+}
+.archives-list >.archives-list-content ul li >.title h3 a:hover {
+  color: #00f;
+}
 #footer {
   background: #262a30;
   padding: 50px 0;
