@@ -138,14 +138,14 @@
   // 底部位置控制
   
   //console(window.screen.height);
-  console.log($('#main').outerHeight());
-  console.log($("#wrap > .outer").outerHeight());
-  console.log($("#footer").outerHeight());
   var footerL = $("#footer");
+  // footerL.css("display","none");
   var mainH = $('#main').outerHeight();
   if($('#main').outerHeight() <= $("#wrap > .outer").outerHeight() - footerL.outerHeight()) {
-    console.log(1);
+    // console.log(1);
     footerL.css({position:"absolute", left:0, bottom: 0,width:"100%"});
   }
-
+  setTimeout(function(){
+    footerL.css("display","block");
+  },200);
 })(jQuery);
