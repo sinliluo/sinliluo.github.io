@@ -294,6 +294,10 @@ a {
     float: left;
     max-width: 296px;
   }
+  #wrap #header .panel-main_inner {
+    vertical-align: top;
+    padding-top: 80px;
+  }
   #wrap #header .photo-show {
     width: 120px;
     height: 120px;
@@ -315,6 +319,7 @@ a {
 #header {
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 .panel-main {
   position: relative;
@@ -331,7 +336,7 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: rgba(51,51,51,0.98);
+  background: #333;
   padding: 0 10px;
 }
 .nav-container .nav ul:before,
@@ -350,7 +355,7 @@ a {
   display: block;
   width: 100%;
   line-height: 40px;
-  color: #666;
+  color: #fff;
 }
 .photo-show {
   position: relative;
@@ -434,7 +439,6 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 10px solid rgba(254,254,254,0.8);
 }
 .photo-show .img img {
   width: 100%;
@@ -617,8 +621,8 @@ a {
 }
 .archive-article-inner .post-list >li:hover,
 .archive-article-inner .post-list >li:focus {
-  -webkit-box-shadow: 4px 4px 4px #c9e1f6, -4px -4px 4px #c9e1f6, -4px 4px 4px #c9e1f6, 4px -4px 4px #c9e1f6;
-  box-shadow: 4px 4px 4px #c9e1f6, -4px -4px 4px #c9e1f6, -4px 4px 4px #c9e1f6, 4px -4px 4px #c9e1f6;
+  -webkit-box-shadow: 4px 4px 4px #c8e2e4, -4px -4px 4px #c8e2e4, -4px 4px 4px #c8e2e4, 4px -4px 4px #c8e2e4;
+  box-shadow: 4px 4px 4px #c8e2e4, -4px -4px 4px #c8e2e4, -4px 4px 4px #c8e2e4, 4px -4px 4px #c8e2e4;
 }
 .archive-article-inner .post-list >li >h2 {
   padding-left: 15px;
@@ -1202,6 +1206,11 @@ a.article-title:hover {
   max-width: 100%;
   margin: 0 auto;
 }
+@media screen and (max-width: 1000px) {
+  #main .tag-box {
+    padding: 10px 2px;
+  }
+}
 .tag-box {
   text-align: center;
   padding: 20px 50px;
@@ -1315,6 +1324,24 @@ a.article-title:hover {
   -ms-transform: translateY(5px);
   transform: translateY(5px);
 /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+#aboutMe {
+  padding: 10px;
+  -webkit-box-shadow: 4px 4px 4px #c8e2e4, -4px -4px 4px #c8e2e4, -4px 4px 4px #c8e2e4, 4px -4px 4px #c8e2e4;
+  box-shadow: 4px 4px 4px #c8e2e4, -4px -4px 4px #c8e2e4, -4px 4px 4px #c8e2e4, 4px -4px 4px #c8e2e4;
+}
+#aboutMe h1,
+#aboutMe h2>a {
+  color: #4094c3;
+}
+#aboutMe h1:hover,
+#aboutMe h2>a:hover {
+  color: #000;
+}
+#aboutMe > header > h1 {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
 }
 .article-entry pre,
 .article-entry .highlight {
