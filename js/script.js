@@ -134,4 +134,18 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+  // 底部位置控制
+  
+  //console(window.screen.height);
+  console.log($('#main').outerHeight());
+  console.log($("#wrap > .outer").outerHeight());
+  console.log($("#footer").outerHeight());
+  var footerL = $("#footer");
+  var mainH = $('#main').outerHeight();
+  if($('#main').outerHeight() <= $("#wrap > .outer").outerHeight() - footerL.outerHeight()) {
+    console.log(1);
+    footerL.css({position:"absolute", left:0, bottom: 0,width:"100%"});
+  }
+
 })(jQuery);
