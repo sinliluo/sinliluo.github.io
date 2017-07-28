@@ -819,7 +819,6 @@ a.article-title:hover {
   line-height: 1.6em;
   margin-bottom: 10px;
   padding-left: 10px;
-  text-indent: 2em;
 }
 .article-entry h1,
 .article-entry h2,
@@ -862,6 +861,7 @@ a.article-title:hover {
 .article-entry dl {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
+  list-style: none;
 }
 .article-entry img,
 .article-entry video {
