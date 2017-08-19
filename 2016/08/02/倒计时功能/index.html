@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>倒计时功能 | sinli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="sinlin, 前端, Web, 前端开发" >
+    <meta name="description" content="Sinlin个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="sinli" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+
+    
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">sinli</span>
+                    <span class="description">love coding, love life</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2016/08/02/倒计时功能/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2016/08/02/倒计时功能/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2016/08/02/倒计时功能/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2016/08/02/倒计时功能/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/sinli.jpg" alt="avatar" title="sinli" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>倒计时功能</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        sinli 发表于
+        <time datetime="2016-08-02T05:08:08.000Z">2016-08-02</time>
+    </p>
+    <div class="post-content">
+        <p>摘要： 倒计时功能<br><a id="more"></a></p>
+<h3 id="话不多说直接代码"><a href="#话不多说直接代码" class="headerlink" title="话不多说直接代码"></a>话不多说直接代码</h3><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  showtime()</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">showtime</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">var</span> www = <span class="built_in">document</span>.getElementById(<span class="string">'www'</span>);<span class="comment">//页面需要有一个id展示倒计时</span></div><div class="line">       <span class="keyword">var</span> Newtime = <span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">// 获取当前时间</span></div><div class="line">       <span class="keyword">var</span> endtime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2015/12/11,14:44:00'</span>); <span class="comment">// 设置结束时间</span></div><div class="line">       <span class="keyword">var</span> lefttime=<span class="built_in">parseInt</span>((endtime.getTime()-Newtime.getTime())/<span class="number">1000</span>); <span class="comment">//获取差值</span></div><div class="line"></div><div class="line">       <span class="keyword">if</span>(lefttime&gt;<span class="number">0</span>)&#123;</div><div class="line">          <span class="keyword">var</span> date  =  <span class="built_in">parseInt</span>(lefttime/(<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>)); <span class="comment">//转化为天</span></div><div class="line">          <span class="keyword">var</span> hours   =  <span class="built_in">parseInt</span>(lefttime/(<span class="number">60</span>*<span class="number">60</span>)%<span class="number">24</span>);<span class="comment">//转化为小时</span></div><div class="line">          <span class="keyword">var</span> minute= <span class="built_in">parseInt</span>(lefttime/<span class="number">60</span>%<span class="number">60</span>);<span class="comment">//转化为分钟</span></div><div class="line">          <span class="keyword">var</span> second=  <span class="built_in">parseInt</span>(lefttime%<span class="number">60</span>); <span class="comment">//转化为秒</span></div><div class="line">          www.innerHTML = date+<span class="string">'日'</span>+hours+<span class="string">':'</span>+minute+<span class="string">':'</span>+second  <span class="comment">//展示</span></div><div class="line">          setTimeout(showtime,<span class="number">1000</span>)</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">          <span class="comment">//倒计时归零</span></div><div class="line">          www.innerHTML = <span class="number">00</span>+<span class="string">'日'</span>+<span class="number">0</span>+<span class="string">':'</span>+<span class="number">0</span>+<span class="string">':'</span>+<span class="number">0</span></div><div class="line">       &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/Web技术/">Web技术</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/常用功能/" title="常用功能">常用功能</a>
+    
+
+        </span>
+    </p>
+</article>
+<div class="article-share clearfix text-center">
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2016/08/09/node安装报错解决问题/">
+            
+                node安装报错解决问题
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2016/07/16/vue文件代码高亮设置/">
+            
+                vue文件代码高亮设置
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(14)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/es6/" title="es6">es6 (1)</a>
+  
+    <a class="tag-item" href="/tags/NodeJs/" title="NodeJs">NodeJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NPM/" title="NPM">NPM (1)</a>
+  
+    <a class="tag-item" href="/tags/angular/" title="angular">angular (1)</a>
+  
+    <a class="tag-item" href="/tags/KonvaJs/" title="KonvaJs">KonvaJs (1)</a>
+  
+    <a class="tag-item" href="/tags/git/" title="git">git (2)</a>
+  
+    <a class="tag-item" href="/tags/githug/" title="githug">githug (1)</a>
+  
+    <a class="tag-item" href="/tags/github/" title="github">github (1)</a>
+  
+    <a class="tag-item" href="/tags/css3/" title="css3">css3 (1)</a>
+  
+    <a class="tag-item" href="/tags/node/" title="node">node (1)</a>
+  
+    <a class="tag-item" href="/tags/sublime/" title="sublime">sublime (2)</a>
+  
+    <a class="tag-item" href="/tags/命令/" title="命令">命令 (1)</a>
+  
+    <a class="tag-item" href="/tags/vue/" title="vue">vue (1)</a>
+  
+    <a class="tag-item" href="/tags/常用功能/" title="常用功能">常用功能 (1)</a>
+  
+    <a class="tag-item" href="/tags/链接/" title="链接">链接 (1)</a>
+  
+    <a class="tag-item" href="/tags/正则/" title="正则">正则 (1)</a>
+  
+    <a class="tag-item" href="/tags/性能优化/" title="性能优化">性能优化 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">sinli Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+<!-- 添加百度自动推送 -->
+<!-- <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script> -->
+
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
