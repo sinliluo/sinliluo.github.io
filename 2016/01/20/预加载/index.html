@@ -1,122 +1,106 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <title>实现预加载的三种方式 | ゝ嗦嗦</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。本文将分享三个不同的预加载技术，来增强网站的性能与可用性">
-<meta name="keywords" content="性能优化,JavaScript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="实现预加载的三种方式">
-<meta property="og:url" content="http://yoursite.com/2016/01/20/预加载/index.html">
-<meta property="og:site_name" content="ゝ嗦嗦">
-<meta property="og:description" content="预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。本文将分享三个不同的预加载技术，来增强网站的性能与可用性">
-<meta property="og:updated_time" content="2017-07-25T02:03:34.889Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现预加载的三种方式">
-<meta name="twitter:description" content="预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。本文将分享三个不同的预加载技术，来增强网站的性能与可用性">
-  
-    <link rel="alternate" href="/atom.xml" title="ゝ嗦嗦" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>实现预加载的三种方式 | sinli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="sinlin, 前端, Web, 前端开发" >
+    <meta name="description" content="Sinlin个人前端小站" >
 
+    
+    <link rel="alternative" href="/atom.xml" title="sinli" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+    
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-    <!-- 背景动画 -->
-    <section class="hidden-xs">
-      <ul class="cb-slideshow">
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-      </ul>
-    </section>
-    <!-- 个人信息 -->
-    <div class="panel-main">
-      <div class="panel-main_inner">
-        <div class="panel-main_content">
-          <!-- 个人信息 -->
-          <div class="photo-show">
-	            <div class="info">
-	              <div class="info-back">
-	                <h3>sinliluo</h3>
-	                <p>前端开发</p>
-	              </div>
-	            </div>
-            	<div class="img"><img src="/images/avatar.jpg"></div>
-          </div>
-          <div class="header-title">
-          	<h1 class="logo-wrap"><a href="/">ゝ嗦嗦</a></h1>
-            
-						<h2 class="sub-title"><a href="/">love coding, love life</a></h2>
-            
-          </div>
-          <!-- 描述 -->
-          
-          <div class="desc">
-            <p>欢迎来到我的个人站</p>
-          </div>
-          
-          <!-- 导航 -->
-          <div class="nav-container">
-            <nav class="nav">
-              <ul>
-                
-                <li><a href="/">博客主页</a></li>
-                
-                <li><a href="/archives">所有文章</a></li>
-                
-                <li><a href="/tags">标签</a></li>
-                
-                <li><a href="/aboutm">关于我</a></li>
-                
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
-    
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">sinli</span>
+                    <span class="description">love coding, love life</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2016/01/20/预加载/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2016/01/20/预加载/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2016/01/20/预加载/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2016/01/20/预加载/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/sinli.jpg" alt="avatar" title="sinli" >
+            </div>
+        </div>
+    </section>
 </header>
 
-      <div class="outer">
-        <section id="main"><article id="post-预加载" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h3 class="article-title" itemprop="name">
-      实现预加载的三种方式
-    </h3>
-  
 
-      </header>
-    
-    <div class="article-meta">
-      <img src="/images/calendar.png" width="20px">
-      <a href="/2016/01/20/预加载/" class="article-date">
-  <time datetime="2016-01-20T10:00:00.000Z" itemprop="datePublished">2016-01-20</time>
-</a>
-      
-    </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>实现预加载的三种方式</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        sinli 发表于
+        <time datetime="2016-01-20T10:00:00.000Z">2016-01-20</time>
+    </p>
+    <div class="post-content">
         <p>预加载图片是提高用户体验的一个很好方法。图片预先加载到浏览器中，访问者便可顺利地在你的网站上冲浪，并享受到极快的加载速度。这对图片画廊及图片占据很大比例的网站来说十分有利，它保证了图片快速、无缝地发布，也可帮助用户在浏览你网站内容时获得更好的用户体验。本文将分享三个不同的预加载技术，来增强网站的性能与可用性<a id="more"></a></p>
 <h3 id="方法一：用CSS和JavaScript实现预加载"><a href="#方法一：用CSS和JavaScript实现预加载" class="headerlink" title="方法一：用CSS和JavaScript实现预加载"></a>方法一：用CSS和JavaScript实现预加载</h3><p>实现预加载图片有很多方法，包括使用CSS、JavaScript及两者的各种组合。这些技术可根据不同设计场景设计出相应的解决方案，十分高效。<br>单纯使用CSS，可容易、高效地预加载图片，代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#preload-01</span> &#123; <span class="attribute">background</span>: <span class="built_in">url</span>(http://domain.tld/image-01.png) no-repeat -<span class="number">9999px</span> -<span class="number">9999px</span>; &#125;  </div><div class="line"><span class="selector-id">#preload-02</span> &#123; <span class="attribute">background</span>: <span class="built_in">url</span>(http://domain.tld/image-02.png) no-repeat -<span class="number">9999px</span> -<span class="number">9999px</span>; &#125;  </div><div class="line"><span class="selector-id">#preload-03</span> &#123; <span class="attribute">background</span>: <span class="built_in">url</span>(http://domain.tld/image-03.png) no-repeat -<span class="number">9999px</span> -<span class="number">9999px</span>; &#125;</div></pre></td></tr></table></figure></p>
 <p>将这三个ID选择器应用到(X)HTML元素中，我们便可通过CSS的background属性将图片预加载到屏幕外的背景上。只要这些图片的路径保持不变，当它们在Web页面的其他地方被调用时，浏览器就会在渲染过程中使用预加载（缓存）的图片。简单、高效，不需要任何JavaScript.<br>该方法虽然高效，但仍有改进余地。使用该法加载的图片会同页面的其他内容一起加载，增加了页面的整体加载时间。为了解决这个问题，我们增加了一些JavaScript代码，来推迟预加载的时间，直到页面加载完毕。代码如下：</p>
@@ -137,61 +121,180 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  </div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  </div><div class="line">        <span class="comment">// reference to &lt;head&gt;  </span></div><div class="line">        <span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>];  </div><div class="line">  </div><div class="line">        <span class="comment">// a new CSS  </span></div><div class="line">        <span class="keyword">var</span> css = <span class="built_in">document</span>.createElement(<span class="string">'link'</span>);  </div><div class="line">        css.type = <span class="string">"text/css"</span>;  </div><div class="line">        css.rel  = <span class="string">"stylesheet"</span>;  </div><div class="line">        css.href = <span class="string">"http://domain.tld/preload.css"</span>;  </div><div class="line">  </div><div class="line">        <span class="comment">// a new JS  </span></div><div class="line">        <span class="keyword">var</span> js  = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);  </div><div class="line">        js.type = <span class="string">"text/javascript"</span>;  </div><div class="line">        js.src  = <span class="string">"http://domain.tld/preload.js"</span>;  </div><div class="line">  </div><div class="line">        <span class="comment">// preload JS and CSS  </span></div><div class="line">        head.appendChild(css);  </div><div class="line">        head.appendChild(js);  </div><div class="line">  </div><div class="line">        <span class="comment">// preload image  </span></div><div class="line">        <span class="keyword">new</span> Image().src = <span class="string">"http://domain.tld/preload.png"</span>;  </div><div class="line">  </div><div class="line">    &#125;, <span class="number">1000</span>);  </div><div class="line">  </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>这里，我们通过DOM创建三个元素来实现三个文件的预加载。正如上面提到的那样，使用Ajax，加载文件不会应用到加载页面上。从这点上看，Ajax方法优越于JavaScript。</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/20/预加载/" data-id="cj5nw28na0002v4u2bee0zeie" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
-
-    </footer>
-  </div>
-  
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/Web技术/">Web技术</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
     
-<nav id="article-nav">
-  
-    <a href="/2016/03/14/JS面向对象/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          面向对象
-        
-      </div>
-    </a>
-  
-  
-</nav>
+        <a href="/tags/性能优化/" title="性能优化">性能优化</a>
+    
 
-  
+        </span>
+    </p>
 </article>
+<div class="article-share clearfix text-center">
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
 
-</section>
-        
+<!-- 上一篇/下一篇 -->
 
-        <footer id="footer">
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2016/06/20/NPM详解/">
+            
+                NPM详解
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="javascript: void(0);">没有下一篇了</a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(12)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2006-2017 Sinli Luo&nbsp;&nbsp;
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <a class="tag-item" href="/tags/KonvaJs/" title="KonvaJs">KonvaJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NodeJs/" title="NodeJs">NodeJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NPM/" title="NPM">NPM (1)</a>
+  
+    <a class="tag-item" href="/tags/angular/" title="angular">angular (1)</a>
+  
+    <a class="tag-item" href="/tags/git/" title="git">git (2)</a>
+  
+    <a class="tag-item" href="/tags/githug/" title="githug">githug (2)</a>
+  
+    <a class="tag-item" href="/tags/es6/" title="es6">es6 (1)</a>
+  
+    <a class="tag-item" href="/tags/css3/" title="css3">css3 (1)</a>
+  
+    <a class="tag-item" href="/tags/node/" title="node">node (1)</a>
+  
+    <a class="tag-item" href="/tags/sublime/" title="sublime">sublime (2)</a>
+  
+    <a class="tag-item" href="/tags/命令/" title="命令">命令 (1)</a>
+  
+    <a class="tag-item" href="/tags/vue/" title="vue">vue (1)</a>
+  
+    <a class="tag-item" href="/tags/常用功能/" title="常用功能">常用功能 (1)</a>
+  
+    <a class="tag-item" href="/tags/链接/" title="链接">链接 (1)</a>
+  
+    <a class="tag-item" href="/tags/正则/" title="正则">正则 (1)</a>
+  
+    <a class="tag-item" href="/tags/性能优化/" title="性能优化">性能优化 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+    <!-- 我的微博 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>我的微博</strong></h3>
+        <div class="widget-bd" style="position: relative;">
+  <div id="myWeiboLoading" class="text-center" style="position:absolute;top:0;left:0;right:0;bottom:0;line-height:50px;font-size:12px;background-color:#fff;z-index:9;">微博加载中...</div>
+  <iframe id="myWeibo" width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2376003112&verifier=796ea597&dpc=1"></iframe>
+  <script>
+  (function () {
+    var oMyWeibo = document.getElementById('myWeibo');
+    var oMyWeiboLoading = document.getElementById('myWeiboLoading');
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    var timer = null;
+    if (isIE) {
+      oMyWeibo.onreadystatechange = function(){
+        if(oMyWeibo.readyState === 'loaded' || oMyWeibo.readyState === 'complete'){
+          timer = setTimeout(function () {
+            oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+            timer = null;
+          }, 300);
+        }
+      };
+    } else {
+      oMyWeibo.onload = function () {
+        timer = setTimeout(function () {
+          oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+          timer = null;
+        }, 300);
+      };
+    }
+  })();
+  </script>
+</div>
+    </section>
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
     </div>
-  </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">sinli Loves You</a>
 </footer>
-        
-      </div>   
-    </div>    
-  </div>
-  
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+<!-- 添加百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
-<script src="/js/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
 </body>
 </html>

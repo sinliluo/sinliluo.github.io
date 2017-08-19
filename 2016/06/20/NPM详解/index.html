@@ -1,122 +1,106 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <title>NPM详解 | ゝ嗦嗦</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Npm使用详解：npm所有的常用知识都在这里，没错，所有的！！">
-<meta name="keywords" content="Node.js,NPM">
-<meta property="og:type" content="article">
-<meta property="og:title" content="NPM详解">
-<meta property="og:url" content="http://yoursite.com/2016/06/20/NPM详解/index.html">
-<meta property="og:site_name" content="ゝ嗦嗦">
-<meta property="og:description" content="Npm使用详解：npm所有的常用知识都在这里，没错，所有的！！">
-<meta property="og:updated_time" content="2017-07-25T01:35:37.424Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NPM详解">
-<meta name="twitter:description" content="Npm使用详解：npm所有的常用知识都在这里，没错，所有的！！">
-  
-    <link rel="alternate" href="/atom.xml" title="ゝ嗦嗦" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>NPM详解 | sinli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="sinlin, 前端, Web, 前端开发" >
+    <meta name="description" content="Sinlin个人前端小站" >
 
+    
+    <link rel="alternative" href="/atom.xml" title="sinli" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+    
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-    <!-- 背景动画 -->
-    <section class="hidden-xs">
-      <ul class="cb-slideshow">
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-      </ul>
-    </section>
-    <!-- 个人信息 -->
-    <div class="panel-main">
-      <div class="panel-main_inner">
-        <div class="panel-main_content">
-          <!-- 个人信息 -->
-          <div class="photo-show">
-	            <div class="info">
-	              <div class="info-back">
-	                <h3>sinliluo</h3>
-	                <p>前端开发</p>
-	              </div>
-	            </div>
-            	<div class="img"><img src="/images/avatar.jpg"></div>
-          </div>
-          <div class="header-title">
-          	<h1 class="logo-wrap"><a href="/">ゝ嗦嗦</a></h1>
-            
-						<h2 class="sub-title"><a href="/">love coding, love life</a></h2>
-            
-          </div>
-          <!-- 描述 -->
-          
-          <div class="desc">
-            <p>欢迎来到我的个人站</p>
-          </div>
-          
-          <!-- 导航 -->
-          <div class="nav-container">
-            <nav class="nav">
-              <ul>
-                
-                <li><a href="/">博客主页</a></li>
-                
-                <li><a href="/archives">所有文章</a></li>
-                
-                <li><a href="/tags">标签</a></li>
-                
-                <li><a href="/aboutm">关于我</a></li>
-                
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
     </div>
-    
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">sinli</span>
+                    <span class="description">love coding, love life</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2016/06/20/NPM详解/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2016/06/20/NPM详解/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2016/06/20/NPM详解/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2016/06/20/NPM详解/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/sinli.jpg" alt="avatar" title="sinli" >
+            </div>
+        </div>
+    </section>
 </header>
 
-      <div class="outer">
-        <section id="main"><article id="post-NPM详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h3 class="article-title" itemprop="name">
-      NPM详解
-    </h3>
-  
 
-      </header>
-    
-    <div class="article-meta">
-      <img src="/images/calendar.png" width="20px">
-      <a href="/2016/06/20/NPM详解/" class="article-date">
-  <time datetime="2016-06-20T09:01:34.000Z" itemprop="datePublished">2016-06-20</time>
-</a>
-      
-    </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>NPM详解</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        sinli 发表于
+        <time datetime="2016-06-20T09:01:34.000Z">2016-06-20</time>
+    </p>
+    <div class="post-content">
         <p>Npm使用详解：<br>npm所有的常用知识都在这里，没错，所有的！！<a id="more"></a></p>
 <h3 id="node版本控制"><a href="#node版本控制" class="headerlink" title="node版本控制"></a>node版本控制</h3><p>1.使用nvm进行版本控制<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- unix --&gt;</div><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash</div><div class="line">&lt;!-- windows --&gt;</div><div class="line">https://github.com/coreybutler/nvm-windows需要自己下载</div><div class="line">&lt;!-- 安装node --&gt;</div><div class="line">$ nvm install v4.4</div><div class="line">&lt;!-- 选择默认版本 --&gt;</div><div class="line">$ nvm <span class="built_in">alias</span> default v4.4</div></pre></td></tr></table></figure></p>
 <p>2.镜像管理,使用cnpm进行加速<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 使用cnpm命令 --&gt;</div><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line">&lt;!-- 使用npm别名 --&gt;</div><div class="line"><span class="built_in">alias</span> cnpm=<span class="string">"npm --registry=https://registry.npm.taobao.org \</span></div><div class="line">--cache=<span class="variable">$HOME</span>/.npm/.cache/cnpm \</div><div class="line">--disturl=https://npm.taobao.org/dist \</div><div class="line">--userconfig=<span class="variable">$HOME</span>/.cnpmrc"</div></pre></td></tr></table></figure></p>
@@ -124,57 +108,186 @@
 <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>1.安装命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install;</div><div class="line">npm install --save-dev;</div><div class="line">npm install -g;</div><div class="line">npm uninstall name;</div></pre></td></tr></table></figure></p>
 <p>2.npm命令<br>npm可以运行package.json的script命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 集成命令 --&gt;</div><div class="line">npm start</div><div class="line">npm restart</div><div class="line">npm <span class="built_in">test</span></div><div class="line">npm stop</div><div class="line">npm init（初始化项目时使用）</div><div class="line">npm publish(发布模块需要使用)</div><div class="line">npm update</div><div class="line">npm search</div><div class="line">npm list</div><div class="line">npm view moduleName(查看模块依赖)</div><div class="line">&lt;!-- script命令 ,在script中定义好--&gt;</div><div class="line">npm run build</div><div class="line">npm run dev</div></pre></td></tr></table></figure></p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/20/NPM详解/" data-id="cj5nw28my0000v4u2k7f252o6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPM/">NPM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            
+        </span>
+        <span class="post-tags">
+            标签：
+            
     
-<nav id="article-nav">
-  
-  
-    <a href="/2016/03/14/JS面向对象/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">面向对象</div>
-    </a>
-  
-</nav>
+        <a href="/tags/NodeJs/" title="NodeJs">NodeJs</a> / 
+    
+        <a href="/tags/NPM/" title="NPM">NPM</a>
+    
 
-  
+        </span>
+    </p>
 </article>
+<div class="article-share clearfix text-center">
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
 
-</section>
-        
+<!-- 上一篇/下一篇 -->
 
-        <footer id="footer">
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2017/04/08/git上传github/">
+            
+                github
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2016/01/20/预加载/">
+            
+                实现预加载的三种方式
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(12)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2006-2017 Sinli Luo&nbsp;&nbsp;
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <a class="tag-item" href="/tags/KonvaJs/" title="KonvaJs">KonvaJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NodeJs/" title="NodeJs">NodeJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NPM/" title="NPM">NPM (1)</a>
+  
+    <a class="tag-item" href="/tags/angular/" title="angular">angular (1)</a>
+  
+    <a class="tag-item" href="/tags/git/" title="git">git (2)</a>
+  
+    <a class="tag-item" href="/tags/githug/" title="githug">githug (2)</a>
+  
+    <a class="tag-item" href="/tags/es6/" title="es6">es6 (1)</a>
+  
+    <a class="tag-item" href="/tags/css3/" title="css3">css3 (1)</a>
+  
+    <a class="tag-item" href="/tags/node/" title="node">node (1)</a>
+  
+    <a class="tag-item" href="/tags/sublime/" title="sublime">sublime (2)</a>
+  
+    <a class="tag-item" href="/tags/命令/" title="命令">命令 (1)</a>
+  
+    <a class="tag-item" href="/tags/vue/" title="vue">vue (1)</a>
+  
+    <a class="tag-item" href="/tags/常用功能/" title="常用功能">常用功能 (1)</a>
+  
+    <a class="tag-item" href="/tags/链接/" title="链接">链接 (1)</a>
+  
+    <a class="tag-item" href="/tags/正则/" title="正则">正则 (1)</a>
+  
+    <a class="tag-item" href="/tags/性能优化/" title="性能优化">性能优化 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+    <!-- 我的微博 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>我的微博</strong></h3>
+        <div class="widget-bd" style="position: relative;">
+  <div id="myWeiboLoading" class="text-center" style="position:absolute;top:0;left:0;right:0;bottom:0;line-height:50px;font-size:12px;background-color:#fff;z-index:9;">微博加载中...</div>
+  <iframe id="myWeibo" width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2376003112&verifier=796ea597&dpc=1"></iframe>
+  <script>
+  (function () {
+    var oMyWeibo = document.getElementById('myWeibo');
+    var oMyWeiboLoading = document.getElementById('myWeiboLoading');
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    var timer = null;
+    if (isIE) {
+      oMyWeibo.onreadystatechange = function(){
+        if(oMyWeibo.readyState === 'loaded' || oMyWeibo.readyState === 'complete'){
+          timer = setTimeout(function () {
+            oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+            timer = null;
+          }, 300);
+        }
+      };
+    } else {
+      oMyWeibo.onload = function () {
+        timer = setTimeout(function () {
+          oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+          timer = null;
+        }, 300);
+      };
+    }
+  })();
+  </script>
+</div>
+    </section>
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
     </div>
-  </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">sinli Loves You</a>
 </footer>
-        
-      </div>   
-    </div>    
-  </div>
-  
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+<!-- 添加百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
-<script src="/js/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
 </body>
 </html>

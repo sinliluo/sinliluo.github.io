@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>angular工作中最常用的几种功能 | sinli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="sinlin, 前端, Web, 前端开发" >
+    <meta name="description" content="Sinlin个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="sinli" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+    
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">sinli</span>
+                    <span class="description">love coding, love life</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2017/04/12/angular工作中最常用的几种功能/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2017/04/12/angular工作中最常用的几种功能/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2017/04/12/angular工作中最常用的几种功能/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2017/04/12/angular工作中最常用的几种功能/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/sinli.jpg" alt="avatar" title="sinli" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>angular工作中最常用的几种功能</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        sinli 发表于
+        <time datetime="2017-04-12T13:54:19.000Z">2017-04-12</time>
+    </p>
+    <div class="post-content">
+        <p>摘要： AngularJS 最常用的功能<br><a id="more"></a></p>
+<h3 id="第一-迭代输出之ng-repeat标签"><a href="#第一-迭代输出之ng-repeat标签" class="headerlink" title="第一 迭代输出之ng-repeat标签"></a>第一 迭代输出之ng-repeat标签</h3><ul>
+<li><p>ng-repeat让table ul ol等标签和js里的数组完美结合</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"person in persons"</span>&gt;</span></div><div class="line">    &#123; &#123; person.name &#125; &#125; is &#123; &#123;person.age&#125; &#125; years old.</div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>你甚至可以指定输出的顺序：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"person in persons | orderBy:'name'"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第二-动态绑定之ng-model标签"><a href="#第二-动态绑定之ng-model标签" class="headerlink" title="第二 动态绑定之ng-model标签"></a>第二 动态绑定之ng-model标签</h3><ul>
+<li><p>任何有用户输入，只要是有值的html标签，都可以动态绑定js中的变量，<br>而且是动态绑定。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ng-model</span>=<span class="string">'password'</span>&gt;</span></div><div class="line"> ```html</div><div class="line">- 对于绑定的变量，你可以使用&#123; &#123; &#125; &#125; 直接引用</div><div class="line">```html</div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>you input password is &#123;&#123;password&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>如果你熟悉fiter，你可以很容易的按你的需要格式输出</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123; &#123; 1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z' &#125; &#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第三-绑定点击事件之ng-click事件"><a href="#第三-绑定点击事件之ng-click事件" class="headerlink" title="第三 绑定点击事件之ng-click事件"></a>第三 绑定点击事件之ng-click事件</h3><ul>
+<li><p>使用ng-click你可以很容易的为一个标签绑定点击事件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"pressMe()"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>当然前提是你要在$scope域中定义的自己的pressMe方法。</p>
+</li>
+<li><p>和传统的onclick方法不同，你甚至可以为ng-click方法传递一个对象，就像这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"person in persons"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"printf(person)"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>当然还有ng-dblclick标签</p>
+</li>
+</ul>
+<h3 id="第四-分支语句之ng-switch-on、ng-if-ng-show-ng-hide-ng-disabled标签"><a href="#第四-分支语句之ng-switch-on、ng-if-ng-show-ng-hide-ng-disabled标签" class="headerlink" title="第四 分支语句之ng-switch on、ng-if/ng-show/ng-hide/ng-disabled标签"></a>第四 分支语句之ng-switch on、ng-if/ng-show/ng-hide/ng-disabled标签</h3><ul>
+<li>分支语句让你在界面上都可以写逻辑判断。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"person in persons"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-switch</span> <span class="attr">on</span>=<span class="string">"person.sex"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-switch-when</span>=<span class="string">"1"</span>&gt;</span>you are a boy<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-switch-when</span>=<span class="string">"2"</span>&gt;</span>you are a girl<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-if</span>=<span class="string">"person.sex==1"</span>&gt;</span>you may be a father<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-show</span>=<span class="string">"person.sex==2"</span>&gt;</span>you may be a mother<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span></div><div class="line">        please input your baby's name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ng-disabled</span>=<span class="string">"!person.hasBaby"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第五-校验语法之ng-trim-ng-minlength-ng-maxlength-required-ng-pattern-等标签"><a href="#第五-校验语法之ng-trim-ng-minlength-ng-maxlength-required-ng-pattern-等标签" class="headerlink" title="第五 校验语法之ng-trim ng-minlength ng-maxlength required ng-pattern 等标签"></a>第五 校验语法之ng-trim ng-minlength ng-maxlength required ng-pattern 等标签</h3><ul>
+<li>表单中的输入框，你可以使用上面的标签来实现对用户输入的校验。</li>
+<li><p>从字面意思上你已经知道了它们的意思。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"yourForm"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"inputText"</span> <span class="attr">required</span> <span class="attr">ng-trim</span>=<span class="string">"true"</span> <span class="attr">ng-model</span>=<span class="string">"userNum"</span> <span class="attr">ng-pattern</span>=<span class="string">"/^[0-9]*[1-9][0-9]*$/"</span> <span class="attr">ng-maxlength</span>=<span class="string">"6"</span> <span class="attr">maxlength</span>=<span class="string">"6"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>你可以通过 $scope.yourForm.inputText.$error.required 来判断输入框是否为空</p>
+</li>
+<li>你可以通过 $scope.yourForm.inputText.$invalid 来判断输入的内容是否满足ng-pattern，ng-maxlength，maxlength</li>
+<li>你通过$scope.userNum获得的输入内容是去掉前后空白的，因为ng-trim的存在。<h3 id="第六-下拉框之ng-options标签"><a href="#第六-下拉框之ng-options标签" class="headerlink" title="第六 下拉框之ng-options标签"></a>第六 下拉框之ng-options标签</h3></li>
+<li><p>ng-options是为下拉框专门打造的标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">"yourSelected"</span> <span class="attr">ng-options</span>=<span class="string">"person.id as person.name in persons"</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>下拉框中显示的是person.name，当你选中其中一个的时候，你可以通过yourSelected得到你选中的person.id.</p>
+</li>
+</ul>
+<h3 id="第七-控制css之ng-style标签"><a href="#第七-控制css之ng-style标签" class="headerlink" title="第七  控制css之ng-style标签"></a>第七  控制css之ng-style标签</h3><ul>
+<li><p>ng-style帮你轻松控制你的css属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-style</span>=<span class="string">"myColor"</span>&gt;</span>your color<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>你可以通过给myColor赋值的形式来改变你想要的效果，就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$scope.myColor= &#123; <span class="attr">color</span>:<span class="string">'blue'</span> &#125; ;</div><div class="line">$scope.myColor=&#123;<span class="attr">cursor</span>: <span class="string">'pointer'</span>,<span class="attr">color</span>:<span class="string">'blue'</span>&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第八-异步请求之-http对象。"><a href="#第八-异步请求之-http对象。" class="headerlink" title="第八  异步请求之$http对象。"></a>第八  异步请求之$http对象。</h3><ul>
+<li>AngularJS 提供了一个类似jquery的$.ajax的对象，用于异步请求。</li>
+<li><p>在AngularJS中对异步操作是推崇至极的，所以$http的操作都是异步的不像jquery.ajax里还提供了async参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$http(&#123;<span class="attr">method</span> : <span class="string">'POST'</span>,<span class="attr">params</span> : &#123; <span class="attr">id</span>:<span class="number">123</span>&#125;, <span class="attr">data</span>:&#123;<span class="attr">name</span>:<span class="string">'john'</span>,<span class="attr">age</span>:<span class="number">27</span>&#125;, <span class="attr">url</span> : <span class="string">"/mypath"</span>&#125;)</div><div class="line">.success(<span class="function"><span class="keyword">function</span>(<span class="params">response, status, headers, config</span>)</span>&#123;</div><div class="line"><span class="comment">//do anything what you want;</span></div><div class="line">&#125;)</div><div class="line">.error(<span class="function"><span class="keyword">function</span>(<span class="params">response, status, headers, config</span>)</span>&#123;</div><div class="line"><span class="comment">//do  anything what you want;</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果你是POST请求，params里的数据会帮你拼到url后面，data里的数据会放到请求体中。</p>
+</li>
+</ul>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/Web技术/">Web技术</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/angular/" title="angular">angular</a>
+    
+
+        </span>
+    </p>
+</article>
+<div class="article-share clearfix text-center">
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2017/04/17/前端技术链接/">
+            
+                前端技术链接
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2017/04/11/正则表达式/">
+            
+                正则表达式
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(12)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/KonvaJs/" title="KonvaJs">KonvaJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NodeJs/" title="NodeJs">NodeJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NPM/" title="NPM">NPM (1)</a>
+  
+    <a class="tag-item" href="/tags/angular/" title="angular">angular (1)</a>
+  
+    <a class="tag-item" href="/tags/git/" title="git">git (2)</a>
+  
+    <a class="tag-item" href="/tags/githug/" title="githug">githug (2)</a>
+  
+    <a class="tag-item" href="/tags/es6/" title="es6">es6 (1)</a>
+  
+    <a class="tag-item" href="/tags/css3/" title="css3">css3 (1)</a>
+  
+    <a class="tag-item" href="/tags/node/" title="node">node (1)</a>
+  
+    <a class="tag-item" href="/tags/sublime/" title="sublime">sublime (2)</a>
+  
+    <a class="tag-item" href="/tags/命令/" title="命令">命令 (1)</a>
+  
+    <a class="tag-item" href="/tags/vue/" title="vue">vue (1)</a>
+  
+    <a class="tag-item" href="/tags/常用功能/" title="常用功能">常用功能 (1)</a>
+  
+    <a class="tag-item" href="/tags/链接/" title="链接">链接 (1)</a>
+  
+    <a class="tag-item" href="/tags/正则/" title="正则">正则 (1)</a>
+  
+    <a class="tag-item" href="/tags/性能优化/" title="性能优化">性能优化 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+    <!-- 我的微博 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>我的微博</strong></h3>
+        <div class="widget-bd" style="position: relative;">
+  <div id="myWeiboLoading" class="text-center" style="position:absolute;top:0;left:0;right:0;bottom:0;line-height:50px;font-size:12px;background-color:#fff;z-index:9;">微博加载中...</div>
+  <iframe id="myWeibo" width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2376003112&verifier=796ea597&dpc=1"></iframe>
+  <script>
+  (function () {
+    var oMyWeibo = document.getElementById('myWeibo');
+    var oMyWeiboLoading = document.getElementById('myWeiboLoading');
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    var timer = null;
+    if (isIE) {
+      oMyWeibo.onreadystatechange = function(){
+        if(oMyWeibo.readyState === 'loaded' || oMyWeibo.readyState === 'complete'){
+          timer = setTimeout(function () {
+            oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+            timer = null;
+          }, 300);
+        }
+      };
+    } else {
+      oMyWeibo.onload = function () {
+        timer = setTimeout(function () {
+          oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+          timer = null;
+        }, 300);
+      };
+    }
+  })();
+  </script>
+</div>
+    </section>
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">sinli Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+<!-- 添加百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

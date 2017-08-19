@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>KonvaJS中文文档 | sinli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="sinlin, 前端, Web, 前端开发" >
+    <meta name="description" content="Sinlin个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="sinli" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+    
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">sinli</span>
+                    <span class="description">love coding, love life</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2017/04/08/KonvaJS中文文档/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2017/04/08/KonvaJS中文文档/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2017/04/08/KonvaJS中文文档/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2017/04/08/KonvaJS中文文档/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/sinli.jpg" alt="avatar" title="sinli" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>KonvaJS中文文档</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        sinli 发表于
+        <time datetime="2017-04-08T12:14:54.000Z">2017-04-08</time>
+    </p>
+    <div class="post-content">
+        <p>摘要: Konva 是一个 基于 Canvas 开发的 2d js 框架库, 它可以轻松的实现桌面应用和移动应用中的图形交互交互效果<br><a id="more"></a><br>正文:</p>
+<h3 id="KonvaJS"><a href="#KonvaJS" class="headerlink" title="KonvaJS"></a>KonvaJS</h3><ul>
+<li><p>Konva 是一个 基于 Canvas 开发的 2d js 框架库, 它可以轻松的实现桌面应用和移动应用中的图形交互交互效果.</p>
+</li>
+<li><p>Konva 可以高效的实现动画, 变换, 节点嵌套, 局部操作, 滤镜, 缓存, 事件等功能, 不仅仅适用于桌面与移动开发, 还有更为广泛的应用.</p>
+</li>
+<li><p>Konva 允许在舞台上绘图, 添加事件监听, 移动或缩放某个图形, 独立旋转, 以及高效的动画. 即使应用中含有数千个图形也是可以轻松实现的.</p>
+</li>
+</ul>
+<h3 id="1-1-使用-Konva"><a href="#1-1-使用-Konva" class="headerlink" title="1.1. 使用 Konva"></a>1.1. 使用 Konva</h3><ul>
+<li>打开链接 <a href="http://konvajs.github.io/" target="_blank" rel="external">http://konvajs.github.io/</a>, 下载 KonvaJS 代码.</li>
+<li>开发中为了方便调试, 使用完全版. 实际使用使用压缩版.</li>
+<li>使用 script 标签导入需要使用的 Konva 库.<br> <code>&lt;script src=&quot;konva.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="1-2-KonvaJS-的理念"><a href="#1-2-KonvaJS-的理念" class="headerlink" title="1.2. KonvaJS 的理念"></a>1.2. KonvaJS 的理念</h3><ul>
+<li>任何图形都存在于舞台中( Konva.Stage ). 这个舞台中又可以包多个用户层( Konva.Layer ).</li>
+<li>每一个层中都含有两个 canvas 着色器: 一个前台渲染器, 一个后台渲染器. 前台渲染器是可以看见的部分,而后台渲染器是一个隐藏的 canvas. 后台渲染器为了提高效率实现事件监听的工作.</li>
+<li>每一个层可以包含形状( Shape ), 形状的组( Group ), 甚至是由组组成的组. 舞台, 层, 组, 以及形状都是虚拟的节点( node ). 类似于 HTML 页面中的 DOM 节点.</li>
+<li><p>在这个图形中, 首先有一个舞台( Stage ). 该舞台在页面中与整个页面的大小一样. 然后舞台中有一个层( Layer ). 层中有一个矩形( Rect )和一个圆形( Circle ). 因此就有一个树结构:所有的节点都可以设置样式与变化. 即使 Konva 可以重新渲染形状, 例如: 矩形, 圆形, 图片, 精灵, 文本, 线段, 多边形, 正多边形, 路径, 和星星等. 但是开发者依旧可以根据 Shape 类的模板自定义自己的图形, 然后重写 draw 方法.只要拥有了 舞台( Stage ), 并且上面放置了层( Layer )和图形( Shape ), 那么就可以为他添加事件监听, 变换节点, 运行动画, 使用路径, 甚至是更多的效果.<br>###例如要实现上面的案例:</p>
+</li>
+<li><p>需要引入 Konva.js 文件<br><code>&lt;script src=&quot;konva.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+<li>然后页面中放置一个容器作为 Konva 处理的对象. Konva 会在该容器中添加 canvas 标签. 值得说明的是, 需要为这个标签添加 id 属性.<br><code>&lt;div id=&quot;dv&quot;&gt;&lt;/div&gt;</code></li>
+<li><p>然后编写 js 代码. Konva 是一个完全面向对象的库.<br>创建舞台</p>
+<pre><code>var stage = new Konva.Stage({
+    container: &apos;dv&apos;,
+    width: window.innerWidth,
+    height: window.innerHeight
+});
+</code></pre><p>首先, 在 Konva 中所有的图形都是在 Konva 中的一个构造函数. Konva 是全局的命名空间.<br>创建舞台使用的是 Stage 构造函数. 该函数需要提供参数.<br>Konva 中所有图形的参数都是使用 json 对象的方式进行提供.<br>舞台需要设置容器的 id, 即 container 属性. 以及宽( width ), 高( height ).<br>舞台中可以放置一个到多个层( Layer ), 所有的图形应该放在在层中.<br>首先创建层对象. 层对象不需要传递参数.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> layer = <span class="keyword">new</span> Konva.Layer();</div></pre></td></tr></table></figure>
+<p>将层添加到舞台中. Konva 中凡是添加, 都是使用 add 方法.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stage.add( layer );</div></pre></td></tr></table></figure>
+<p>在层中放置一个矩形, 就创建一个 矩形对象.<br>矩形对象需要四个参数来确定, 分别是 左上角的两个坐标, 和 宽与高.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rect = <span class="keyword">new</span> Konva.Rect(&#123;</div><div class="line"><span class="attr">x</span>: <span class="number">100</span>,</div><div class="line"><span class="attr">y</span>: <span class="number">50</span>,</div><div class="line"><span class="attr">width</span>: <span class="number">200</span>,</div><div class="line"><span class="attr">height</span>: <span class="number">100</span>,</div><div class="line"><span class="attr">fill</span>: <span class="string">'red'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Konva 中添加颜色使用 fill 属性和 stroke 属性, 分别表示填充颜色与描边颜色.<br>将矩形添加到 层中<br>layer.add( rect );<br>在层中添加一个圆形, 使用构造函数 Circle<br>var circle = new Konva.Circle({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>radius: 100,<br>fill: ‘pink’,<br>stroke: ‘blue’<br>});<br>layer.add( circle );<br>Konva 中使用 radius 设置圆形的半径.<br>Konva 中如果需要获取对象的数据, 使用 getXXX 方法. 传入参数即设置, 不传参数就是获取数据.<br>最后绘图使用 draw 方法<br>layer.draw();<br>1.3. 基本形状</p>
+<p>Konva.js 支持的形状有: 矩形( Rect ), 圆形( Circle ), 椭圆( Rllipse ), 线段( Line ), 图像( Image ), 文本( Text ), 文本路径( TextPath ), 星星( Start ), 标签( Label ), SVG 路径( SVG Path ), 正多边形( RegularPolygon ). 同时也可以自定义形状.</p>
+<p>自定义形状使用 Shape 构造函数创建<br>需要提供自定义的绘图方法 sceneFunc<br>var triangle = new Konva.Shape({<br>sceneFunc: function ( ctx ) {<br>// 自定义绘图路径<br>ctx.moveTo( window.innerWidth / 2, window.innerHeight / 4 );<br>ctx.lineTo( window.innerWidth / 2 - window.innerHeight / ( 2 <em> 1.732 ), window.innerHeight </em> 3 / 4 );<br>ctx.lineTo( window.innerWidth / 2 + window.innerHeight / ( 2 <em> 1.732 ), window.innerHeight </em> 3 / 4 );<br>ctx.closePath();<br>// Konva.js 的独有方法<br>ctx.fillStrokeShape( this );<br>},<br>fill: ‘pink’,<br>stroke: ‘red’<br>});<br>将图形添加后绘图<br>layer.add( triangle );<br>layer.draw();</p>
+<p>1.4. 样式</p>
+<p>所有的形状都支持下列样式属性:</p>
+<p>填充. 颜色, 渐变或图片.<br>描边. 颜色与宽度.<br>阴影. 颜色, 偏移量, 透明度与模糊<br>透明度<br>1.4.1. 绘制正五边形</p>
+<p>构造函数: Konva.RegularPolygon( options )</p>
+<p>常用属性:</p>
+<p>x, y. 表示正多边形的中心坐标.<br>sides. 表示正多边形的边数.<br>radius. 表示半径.<br>fill. 填充颜色.<br>stroke. 描边的颜色.<br>strokeWidth. 描边的宽度.<br>shadowOffsetX 和 shadowOffsety. 描述背景的偏移量.<br>shadowBlur. 表示模糊程度.<br>opacity. 表示透明度( 取值在 0, 1 之间 ).<br>案例</p>
+<p>var shape = new Konva.RegularPolygon({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>sides: 5,<br>radius: 70,<br>fill: ‘red’,<br>stroke: ‘black’,<br>strokeWidth: 4,<br>shadowOffsetX: 20,<br>shadowOffsetY: 25,<br>shadowBlurBlur: 40,<br>opacity: 0.5<br>});<br>layer.add( shape );</p>
+<p>1.5. 事件</p>
+<p>使用 Konva 可以轻松的实现监听用户添加的事件. 例如 click, dblclick, mouseover, tap, dbltap, touchstart 等. 属性值变化事件. 例如 scaleXChange, fillChange 等. 以及拖拽事件. 例如 dragstart, dragmove, dragend.</p>
+<p>代码</p>
+<p>circle.on( ‘mouseout touchend’, function () {<br>console.log( ‘用户输入’ );<br>});<br>circle.on( ‘xChange’, function () {<br>console.log( ‘位置发生改变’ );<br>});<br>circle.on( ‘dragend’, function () {<br>console.log( ‘拖动停止’ );<br>});<br>1.6. 拖拽与降低</p>
+<p>Konva 支持拖拽的功能. 也支持下降事件( drop, dropenter, dropleave, dropover ).</p>
+<p>如果需要实现拖拽的功能. 可以设置 draggable 属性为 true.</p>
+<p>创建的时候设置属性<br>创建后使用方法设置属性<br>shape.draggable( true );<br>Konva 还支持给拖拽事件添加移动范围.</p>
+<p>1.7. 滤镜( Filter )</p>
+<p>Konva 支持多种滤镜功能. 例如: 模糊, 翻转, 声音等.</p>
+<p>1.8. 动画</p>
+<p>Konva 中可以使用两种方式创建动画</p>
+<p>使用 Konva.Animation<br>var anim = new Konva.Animation(function ( frame ) {<br>var time = frame.time,<br>timeDiff = frame.timeDiff,<br>frameRate = frame.frameRate;<br>// 更新代码<br>}, layer );<br>使用 Konva.Tween</p>
+<p>var tween = new Konva.Tween({<br>node: rect,<br>duration: 1,<br>x: 140,<br>rotation: Math.PI * 2,<br>opacity: 1,<br>strokeWidth: 6<br>});</p>
+<p>// 或者使用新的短方法<br>circle.to({<br>duration: 1,<br>fill: ‘green’<br>});<br>1.9. 选择器</p>
+<p>当构建规模较大的应用时, 如果可以对元素进行搜索是非常方便的. Konva 使用选择器来实现元素的查找. 使用 find() 方法返回一个集合. 使用 findOne() 方法返回集合中的第 0 个元素.</p>
+<p>给元素提供 name 属性, 可以使用 ‘.name’ 来进行获取. 类似于类选择器.<br>使用构造函数的名字也可以作为名字选择器. 类似于标签选择器.<br>使用 id 属性, 则使用 ‘#id’ 来获取.<br>查找方法使用层对象来调用.<br>案例</p>
+<p>…<br>var r = 100;<br>var c1 = new Konva.Circle({<br>x: stage.getWidth() / 8,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’,<br>id: ‘c1’<br>});<br>layer.add( c1 );</p>
+<p>var c2 = new Konva.Circle({<br>x: stage.getWidth() / 8 * 3,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’,<br>name: ‘c’<br>});<br>layer.add( c2 );</p>
+<p>var c3 = new Konva.Circle({<br>x: stage.getWidth() / 8 * 5,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’,<br>name: ‘c’<br>});<br>layer.add( c3 );</p>
+<p>var c3 = new Konva.Circle({<br>x: stage.getWidth() / 8 * 7,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’<br>});<br>layer.add( c3 );</p>
+<p>layer.find( ‘.c’ ).each(function ( v, i ) {<br>v.fill( ‘pink’ );<br>});</p>
+<p>layer.find( ‘#c1’ ).forEach(function ( v, i ) {<br>v.stroke( ‘blue’ );<br>v.strokeWidth( 10 );<br>});</p>
+<p>layer.find( ‘Circle’ ).each( function ( v, i ) {<br>v.stroke( ‘green’ );<br>});<br>…<br>1.10. 序列号与反序列化</p>
+<p>所有被创建的对象都可以保存为 JSON 对象. 可以在服务器或本地存储中使用它.</p>
+<p>var json = stage.toJSON();<br>同时, 也可以从 JSON 中恢复 Konva 对象.</p>
+<p>var json = ‘{“attrs”:{“width”:578,”height”:200},’ +<br>‘“className”:”Stage”, ‘ +<br>‘“children”:[{ ‘ +<br>‘“attrs”:{},’ +<br>‘“className”:”Layer”,’ +<br>‘“children”:[ ‘ +<br>‘{“attrs”:{ ‘ +<br>‘“x”:100,”y”:100,’ +<br>‘“sides”:6,”radius”:70,’ +<br>‘“fill”:”red”,”stroke”:”black”,’ +<br>‘“strokeWidth”:4},’ +<br>‘“className”:”RegularPolygon”}’ +<br>‘]’ +<br>‘}]}’;<br>var stage = Konva.Node.create(json, ‘container’);</p>
+<ol>
+<li>形状 Shape<br>2.1. 矩形 Rect</li>
+</ol>
+<p>创建语法: new Konva.Rect( config )</p>
+<p>常用属性:</p>
+<p>cornerRadius 属性. 数字类型, 表示圆角矩形的圆角半径.<br>fill 属性. 字符串, 设置填充颜色.<br>stroke 属性. 字符串, 设置描边颜色.<br>dash 属性. 数组, 用于描述虚线的间隔.<br>x, y, width, height 属性. 数字, 描述矩形的位置与宽高.<br>name, id 属性. 字符串, 用于设置搜索标记.<br>opacity 属性. 数字, 用于设置透明度.<br>scaleX, scaleY 属性. 数字, 用于设置缩放变换.<br>rotation 属性. 数字, 用于设置旋转角度.<br>draggable 属性. 布尔类型, 用于设置是否允许拖拽.<br>lineJoin, lineCap 属性. 设置线样式.<br>常用方法:</p>
+<p>Konva 中构造函数的属性多半有同名的方法.<br>toJSON() 方法. 将动画转换成 json 字符串.<br>to( params ) 方法. 使用 Tween 动画.<br>setAttrs( config ) 与 setAttr( attr, val ) 方法, 用于重新设置属性.<br>remove() 方法. 将当前对象删除, 但是销毁.<br>on( evtStr, handler ) 与 off( evtStr ) 方法, 用于添加与移除事件.<br>案例</p>
+<p>…<br>var rect = new Konva.Rect({<br>x: 100, y: 100,<br>width: 200, height: 100,<br>stroke: ‘red’, fill: ‘pink’<br>});<br>layer.add( rect );<br>…<br>2.2. 圆 Circle</p>
+<p>创建语法: new Konva.Circle( config )</p>
+<p>常用属性:</p>
+<p>radius 属性. 数字类型, 用于设置半径.<br>fill, stroke 属性.<br>strokeWidth 属性.<br>lineJoin, lineCap 属性.<br>dash 属性.<br>x, y 属性<br>常用方法:</p>
+<p>2.3. 椭圆 Ellipse</p>
+<p>创建语法: new Konva.Ellipse( config ).</p>
+<p>常用属性:</p>
+<p>x, y 属性. 数字类型, 表示椭圆中心的坐标<br>radius 属性. 对象类型, x, y 分别表示椭圆的长轴与短轴.<br>案例</p>
+<p>var ellipse = new Konva.Ellipse({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>radius: {<br>x: 100, y: 100<br>},<br>stroke: ‘red’,<br>fill: ‘pink’,<br>rotation: 30<br>});<br>效果</p>
+<p>2.4. 楔形 Wedge</p>
+<p>创建语法: new Konva.Wedge( config )</p>
+<p>常用属性:</p>
+<p>angle 属性. 表示楔形的角度. 角度带有方向, 水平向右为 0 度. 使用角度单位.<br>radius 属性. 表示半径.<br>clockwise 属性. 表示方向.<br>x, y, lineJoin, lineCap, fill, stroke, …<br>常用方法:</p>
+<p>案例</p>
+<p>…<br>var data = [ .3, .4, .2, .1 ];<br>var colors = ‘red, pink, green, blue’.split( ‘,’ );<br>var startAngle = -90;<br>data.forEach( function ( v, i ) {<br>var wedge = new Konva.Wedge({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>radius: 100,<br>angle: startAngle + 360 * v,<br>rotation: startAngle,<br>fill: colors[ i ],<br>opacity: .8<br>});</p>
+<p>startAngle += 360 * v;<br>layer.add( wedge );<br>});<br>…<br>效果</p>
+<p>2.5. 线段 Line</p>
+<p>线段有折现, 曲线与闭合线路的用法.</p>
+<p>创建语法: new Konva.Line( config )</p>
+<p>常用属性:</p>
+<p>points 属性. 数组, 用于存储折线的各个点的坐标.<br>tension 属性. 数字类型, 用于表示曲线连线. 默认为 0.<br>closed 属性. 布尔值, 用于表示是否闭合路径.<br>x, y 属性. 用于设置绘制直线时的参考坐标原点.<br>常用方法:</p>
+<p>说明:</p>
+<p>使用 Konva.Line 构造函数创建直线.<br>使用 Konva.Line 构造函数与 closed = true 属性可以创建多边形.<br>使用 Konva.Line 构造函数与 tension 属性可以创建曲线板.<br>使用 Konva.Line 构造函数与 tension 属性, 以及 closed = true 可以创建气泡.<br>案例</p>
+<p>var line = new Konva.Line({<br>x: 100, y: 100,<br>points: [ 10, 0, 100, 100, 200, 0 ],<br>tension: 1,<br>stroke: ‘red’<br>});<br>layer.add( line );</p>
+<p>var rect = new Konva.Line({<br>x: 300, y: 100,<br>points: [ 0, 0, 100, 0, 100, 100, 0, 100 ],<br>closed: true,<br>stroke: ‘red’<br>});<br>layer.add( rect );<br>效果</p>
+<p>2.6. 图片 Image</p>
+<p>创建语法: new Konva.Image( config )</p>
+<p>常用属性:</p>
+<p>x, y, width, height<br>image 属性. 用于设置图片对象.<br>crop 属性. 对象: { x, y, width, height }. 表示裁剪.<br>2.7. 文本 Text</p>
+<p>创建语法: new Konva.Text( config )</p>
+<p>常用属性:</p>
+<p>fontFamily 属性.<br>fontSize 属性.<br>fontStyle 属性.<br>fontVariant 属性<br>text 属性. 用于设置文本内容.<br>align 属性. 可选值: left, center, right.<br>padding 属性.<br>lineHeight 属性.<br>x, y 属性<br>案例</p>
+<p>// 创建文本<br>var txt = new Konva.Text({<br>x: 100, y: 100,<br>align: ‘left’,<br>text: ‘测试文本’,<br>fontSize: 30,<br>padding: 10,<br>width: 200,<br>height: 200</p>
+<p>});<br>layer.add( txt );</p>
+<p>var rect = new Konva.Rect({<br>x: 100, y: 100,<br>width: 200, height: 200,<br>stroke: ‘red’<br>});<br>layer.add( rect );<br>效果</p>
+<p>2.8. 星星 Star</p>
+<p>创建语法: new Konva.Star( config )</p>
+<p>常用属性:</p>
+<p>x, y<br>numPoints 属性. 表示 几角星.<br>innerRadius 属性. 表示内半径.<br>outerRadius 属性. 表示外半径.<br>旋转的五角星</p>
+<p>var star = new Konva.Star({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>numPoints: 5,<br>outerRadius: 100,<br>innerRadius: 50,<br>stroke: ‘red’,<br>fill: ‘lightgreen’<br>});<br>layer.add( star );</p>
+<p>var tween = new Konva.Tween({<br>node: star,<br>rotation: 360,<br>duration: 2,<br>onFinish: function () {<br>this.reset();<br>this.play();<br>}<br>});<br>tween.play();<br>效果</p>
+<p>2.9. 圆环 Ring</p>
+<p>创建语法: new Konva.Ring( config )</p>
+<p>常用属性:</p>
+<p>innerRadius, outerRadius<br>clockwise<br>案例</p>
+<p>var ring = new Konva.Ring({<br>x: width / 2,<br>y: height / 2,<br>innerRadius: 50,<br>outerRadius: 100,<br>fill: ‘pink’,<br>stroke: ‘blue’,<br>});<br>layer.add( ring );<br>效果</p>
+<p>2.10. 圆弧 Arc</p>
+<p>创建语法: new Konva.Arc( config )</p>
+<p>常用属性:</p>
+<p>innerRadius, outerRadius<br>angle<br>案例</p>
+<p>var arc = new Konva.Arc({<br>x: width / 2,<br>y: height / 2,<br>innerRadius: 70,<br>outerRadius: 100,<br>stroke: ‘green’,<br>fill: ‘pink’,<br>angle: 60,<br>rotation: -90<br>});<br>layer.add( arc );<br>效果</p>
+<p>2.11. 正多边形 Regular Polygon</p>
+<p>创建语法: new Konva.RegularPolygon( config )</p>
+<p>常用属性:</p>
+<p>sides 属性. 表示多边形的边数.<br>radius 属性.<br>案例</p>
+<p>var shape = new Konva.RegularPolygon({<br>x: width / 2, y: height / 2,<br>sides: 6,<br>radius: 100,<br>fill: ‘pink’,<br>stroke: ‘blue’<br>});<br>layer.add( shape );<br>效果</p>
+<p>2.12. 箭头 Arrow</p>
+<p>创建语法: new Konva.Arrow( config )</p>
+<p>常用属性:</p>
+<p>points 属性<br>tension 属性<br>pointerLength 属性. 表示箭头的长度.<br>pointerWidth 属性. 表示箭头的宽度.<br>案例</p>
+<p>var rect1 = new Konva.Rect({<br>x: width / 4 - 50,<br>y: height / 4 - 25,<br>stroke: ‘#000’,<br>width: 100,<br>height: 50,<br>fill: ‘pink’,<br>opacity: .5<br>});<br>layer.add( rect1 );</p>
+<p>var txt1 = new Konva.Text({<br>x: width / 4 - 50,<br>y: height / 4 - 6,<br>fontSize: 12,<br>text: ‘Object 构造函数’,<br>align: ‘center’,<br>width: 100,<br>height: 50<br>});<br>layer.add( txt1 );</p>
+<p>var rect2 = new Konva.Rect({<br>x: width <em> 3 / 4 - 50,<br>y: height </em> 3 / 4 - 25,<br>stroke: ‘#000’,<br>width: 100,<br>height: 50,<br>fill: ‘pink’,<br>opacity: .5<br>});<br>layer.add( rect2 );</p>
+<p>var txt2 = new Konva.Text({<br>x: width <em> 3 / 4 - 50,<br>y: height </em> 3 / 4 - 6,<br>fontSize: 12,<br>text: ‘Object.prototype’,<br>align: ‘center’,<br>width: 100,<br>height: 50<br>});<br>layer.add( txt2 );</p>
+<p>var arrow = new Konva.Arrow({<br>points: [<br>width / 4 + 50,<br>height / 4,</p>
+<p>width / 2,<br>height / 4,</p>
+<p>width / 2,<br>height * 3 / 4,</p>
+<p>width <em> 3 / 4 - 50 - 7,<br>height </em> 3 / 4<br>],<br>pointerLength: 15,<br>pointerWidth: 6,<br>fill: ‘#ccc’,<br>stroke: ‘#ccc’,<br>lineWidth: .7<br>});</p>
+<p>layer.add( arrow );<br>效果</p>
+<ol>
+<li>组 Group<br>创建语法: new Konva.Group( config )</li>
+</ol>
+<p>常用属性:</p>
+<p>x, y, width, height<br>rotation, draggable<br>案例</p>
+<p>var group = new Konva.Group({<br>x: 100, y: 100,<br>width: 100,<br>height: 100<br>});<br>layer.add( group );<br>group.add( new Konva.Rect({<br>x: 0, y: 0, width: 100, height: 100,<br>fill: ‘red’, stroke: ‘blue’<br>}) );<br>注意: 放在 group 中的形状使用 group 作为参考坐标.</p>
+<p>KonvaJS</p>
+<p>Konva 是一个 基于 Canvas 开发的 2d js 框架库, 它可以轻松的实现桌面应用和移动应用中的图形交互交互效果.</p>
+<p>Konva 可以高效的实现动画, 变换, 节点嵌套, 局部操作, 滤镜, 缓存, 事件等功能, 不仅仅适用于桌面与移动开发, 还有更为广泛的应用.</p>
+<p>Konva 允许在舞台上绘图, 添加事件监听, 移动或缩放某个图形, 独立旋转, 以及高效的动画. 即使应用中含有数千个图形也是可以轻松实现的.</p>
+<p>1.1. 使用 Konva</p>
+<p>打开链接 <a href="http://konvajs.github.io/" target="_blank" rel="external">http://konvajs.github.io/</a>, 下载 KonvaJS 代码.<br>开发中为了方便调试, 使用完全版. 实际使用使用压缩版.<br>使用 script 标签导入需要使用的 Konva 库.</p>
+<script src="konva.js"></script>
+
+
+<p>1.2. KonvaJS 的理念</p>
+<p>任何图形都存在于舞台中( Konva.Stage ). 这个舞台中又可以包多个用户层( Konva.Layer ).</p>
+<p>每一个层中都含有两个 <canvas> 着色器: 一个前台渲染器, 一个后台渲染器. 前台渲染器是可以看见的部分, 而后台渲染器是一个隐藏的 canvas. 后台渲染器为了提高效率实现事件监听的工作.</canvas></p>
+<p>每一个层可以包含形状( Shape ), 形状的组( Group ), 甚至是由组组成的组. 舞台, 层, 组, 以及形状都是虚拟的节点( node ). 类似于 HTML 页面中的 DOM 节点.</p>
+<p>在这个图形中, 首先有一个舞台( Stage ). 该舞台在页面中与整个页面的大小一样. 然后舞台中有一个层( Layer ). 层中有一个矩形( Rect )和一个圆形( Circle ). 因此就有一个树结构:</p>
+<p>所有的节点都可以设置样式与变化. 即使 Konva 可以重新渲染形状, 例如: 矩形, 圆形, 图片, 精灵, 文本, 线段, 多边形, 正多边形, 路径, 和星星等. 但是开发者依旧可以根据 Shape 类的模板自定义自己的图形, 然后重写 draw 方法.</p>
+<p>只要拥有了 舞台( Stage ), 并且上面放置了层( Layer )和图形( Shape ), 那么就可以为他添加事件监听, 变换节点, 运行动画, 使用路径, 甚至是更多的效果.</p>
+<p>例如要实现上面的案例:</p>
+<p>需要引入 Konva.js 文件</p>
+<p><script src="konva.js"></script><br>然后页面中放置一个容器作为 Konva 处理的对象. Konva 会在该容器中添加 canvas 标签. 值得说明的是, 需要为这个标签添加 id 属性.</p>
+<p><div id="dv"></div><br>然后编写 js 代码. Konva 是一个完全面向对象的库.<br>创建舞台<br>var stage = new Konva.Stage({<br>container: ‘dv’,<br>width: window.innerWidth,<br>height: window.innerHeight<br>});<br>首先, 在 Konva 中所有的图形都是在 Konva 中的一个构造函数. Konva 是全局的命名空间.<br>创建舞台使用的是 Stage 构造函数. 该函数需要提供参数.<br>Konva 中所有图形的参数都是使用 json 对象的方式进行提供.<br>舞台需要设置容器的 id, 即 container 属性. 以及宽( width ), 高( height ).<br>舞台中可以放置一个到多个层( Layer ), 所有的图形应该放在在层中.<br>首先创建层对象. 层对象不需要传递参数.<br>var layer = new Konva.Layer();<br>将层添加到舞台中. Konva 中凡是添加, 都是使用 add 方法.<br>stage.add( layer );<br>在层中放置一个矩形, 就创建一个 矩形对象.<br>矩形对象需要四个参数来确定, 分别是 左上角的两个坐标, 和 宽与高.<br>var rect = new Konva.Rect({<br>x: 100,<br>y: 50,<br>width: 200,<br>height: 100,<br>fill: ‘red’<br>});<br>Konva 中添加颜色使用 fill 属性和 stroke 属性, 分别表示填充颜色与描边颜色.<br>将矩形添加到 层中<br>layer.add( rect );<br>在层中添加一个圆形, 使用构造函数 Circle<br>var circle = new Konva.Circle({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>radius: 100,<br>fill: ‘pink’,<br>stroke: ‘blue’<br>});<br>layer.add( circle );<br>Konva 中使用 radius 设置圆形的半径.<br>Konva 中如果需要获取对象的数据, 使用 getXXX 方法. 传入参数即设置, 不传参数就是获取数据.<br>最后绘图使用 draw 方法<br>layer.draw();<br>1.3. 基本形状</p>
+<p>Konva.js 支持的形状有: 矩形( Rect ), 圆形( Circle ), 椭圆( Rllipse ), 线段( Line ), 图像( Image ), 文本( Text ), 文本路径( TextPath ), 星星( Start ), 标签( Label ), SVG 路径( SVG Path ), 正多边形( RegularPolygon ). 同时也可以自定义形状.</p>
+<p>自定义形状使用 Shape 构造函数创建<br>需要提供自定义的绘图方法 sceneFunc<br>var triangle = new Konva.Shape({<br>sceneFunc: function ( ctx ) {<br>// 自定义绘图路径<br>ctx.moveTo( window.innerWidth / 2, window.innerHeight / 4 );<br>ctx.lineTo( window.innerWidth / 2 - window.innerHeight / ( 2 <em> 1.732 ), window.innerHeight </em> 3 / 4 );<br>ctx.lineTo( window.innerWidth / 2 + window.innerHeight / ( 2 <em> 1.732 ), window.innerHeight </em> 3 / 4 );<br>ctx.closePath();<br>// Konva.js 的独有方法<br>ctx.fillStrokeShape( this );<br>},<br>fill: ‘pink’,<br>stroke: ‘red’<br>});<br>将图形添加后绘图<br>layer.add( triangle );<br>layer.draw();</p>
+<p>1.4. 样式</p>
+<p>所有的形状都支持下列样式属性:</p>
+<p>填充. 颜色, 渐变或图片.<br>描边. 颜色与宽度.<br>阴影. 颜色, 偏移量, 透明度与模糊<br>透明度<br>1.4.1. 绘制正五边形</p>
+<p>构造函数: Konva.RegularPolygon( options )</p>
+<p>常用属性:</p>
+<p>x, y. 表示正多边形的中心坐标.<br>sides. 表示正多边形的边数.<br>radius. 表示半径.<br>fill. 填充颜色.<br>stroke. 描边的颜色.<br>strokeWidth. 描边的宽度.<br>shadowOffsetX 和 shadowOffsety. 描述背景的偏移量.<br>shadowBlur. 表示模糊程度.<br>opacity. 表示透明度( 取值在 0, 1 之间 ).<br>案例</p>
+<p>var shape = new Konva.RegularPolygon({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>sides: 5,<br>radius: 70,<br>fill: ‘red’,<br>stroke: ‘black’,<br>strokeWidth: 4,<br>shadowOffsetX: 20,<br>shadowOffsetY: 25,<br>shadowBlurBlur: 40,<br>opacity: 0.5<br>});<br>layer.add( shape );</p>
+<p>1.5. 事件</p>
+<p>使用 Konva 可以轻松的实现监听用户添加的事件. 例如 click, dblclick, mouseover, tap, dbltap, touchstart 等. 属性值变化事件. 例如 scaleXChange, fillChange 等. 以及拖拽事件. 例如 dragstart, dragmove, dragend.</p>
+<p>代码</p>
+<p>circle.on( ‘mouseout touchend’, function () {<br>console.log( ‘用户输入’ );<br>});<br>circle.on( ‘xChange’, function () {<br>console.log( ‘位置发生改变’ );<br>});<br>circle.on( ‘dragend’, function () {<br>console.log( ‘拖动停止’ );<br>});<br>1.6. 拖拽与降低</p>
+<p>Konva 支持拖拽的功能. 也支持下降事件( drop, dropenter, dropleave, dropover ).</p>
+<p>如果需要实现拖拽的功能. 可以设置 draggable 属性为 true.</p>
+<p>创建的时候设置属性<br>创建后使用方法设置属性<br>shape.draggable( true );<br>Konva 还支持给拖拽事件添加移动范围.</p>
+<p>1.7. 滤镜( Filter )</p>
+<p>Konva 支持多种滤镜功能. 例如: 模糊, 翻转, 声音等.</p>
+<p>1.8. 动画</p>
+<p>Konva 中可以使用两种方式创建动画</p>
+<p>使用 Konva.Animation<br>var anim = new Konva.Animation(function ( frame ) {<br>var time = frame.time,<br>timeDiff = frame.timeDiff,<br>frameRate = frame.frameRate;<br>// 更新代码<br>}, layer );<br>使用 Konva.Tween</p>
+<p>var tween = new Konva.Tween({<br>node: rect,<br>duration: 1,<br>x: 140,<br>rotation: Math.PI * 2,<br>opacity: 1,<br>strokeWidth: 6<br>});</p>
+<p>// 或者使用新的短方法<br>circle.to({<br>duration: 1,<br>fill: ‘green’<br>});<br>1.9. 选择器</p>
+<p>当构建规模较大的应用时, 如果可以对元素进行搜索是非常方便的. Konva 使用选择器来实现元素的查找. 使用 find() 方法返回一个集合. 使用 findOne() 方法返回集合中的第 0 个元素.</p>
+<p>给元素提供 name 属性, 可以使用 ‘.name’ 来进行获取. 类似于类选择器.<br>使用构造函数的名字也可以作为名字选择器. 类似于标签选择器.<br>使用 id 属性, 则使用 ‘#id’ 来获取.<br>查找方法使用层对象来调用.<br>案例</p>
+<p>…<br>var r = 100;<br>var c1 = new Konva.Circle({<br>x: stage.getWidth() / 8,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’,<br>id: ‘c1’<br>});<br>layer.add( c1 );</p>
+<p>var c2 = new Konva.Circle({<br>x: stage.getWidth() / 8 * 3,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’,<br>name: ‘c’<br>});<br>layer.add( c2 );</p>
+<p>var c3 = new Konva.Circle({<br>x: stage.getWidth() / 8 * 5,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’,<br>name: ‘c’<br>});<br>layer.add( c3 );</p>
+<p>var c3 = new Konva.Circle({<br>x: stage.getWidth() / 8 * 7,<br>y: stage.getHeight() / 2,<br>radius: r,<br>fill: ‘red’,<br>stroke: ‘#000’<br>});<br>layer.add( c3 );</p>
+<p>layer.find( ‘.c’ ).each(function ( v, i ) {<br>v.fill( ‘pink’ );<br>});</p>
+<p>layer.find( ‘#c1’ ).forEach(function ( v, i ) {<br>v.stroke( ‘blue’ );<br>v.strokeWidth( 10 );<br>});</p>
+<p>layer.find( ‘Circle’ ).each( function ( v, i ) {<br>v.stroke( ‘green’ );<br>});<br>…<br>1.10. 序列号与反序列化</p>
+<p>所有被创建的对象都可以保存为 JSON 对象. 可以在服务器或本地存储中使用它.</p>
+<p>var json = stage.toJSON();<br>同时, 也可以从 JSON 中恢复 Konva 对象.</p>
+<p>var json = ‘{“attrs”:{“width”:578,”height”:200},’ +<br>‘“className”:”Stage”, ‘ +<br>‘“children”:[{ ‘ +<br>‘“attrs”:{},’ +<br>‘“className”:”Layer”,’ +<br>‘“children”:[ ‘ +<br>‘{“attrs”:{ ‘ +<br>‘“x”:100,”y”:100,’ +<br>‘“sides”:6,”radius”:70,’ +<br>‘“fill”:”red”,”stroke”:”black”,’ +<br>‘“strokeWidth”:4},’ +<br>‘“className”:”RegularPolygon”}’ +<br>‘]’ +<br>‘}]}’;<br>var stage = Konva.Node.create(json, ‘container’);</p>
+<ol>
+<li>形状 Shape<br>2.1. 矩形 Rect</li>
+</ol>
+<p>创建语法: new Konva.Rect( config )</p>
+<p>常用属性:</p>
+<p>cornerRadius 属性. 数字类型, 表示圆角矩形的圆角半径.<br>fill 属性. 字符串, 设置填充颜色.<br>stroke 属性. 字符串, 设置描边颜色.<br>dash 属性. 数组, 用于描述虚线的间隔.<br>x, y, width, height 属性. 数字, 描述矩形的位置与宽高.<br>name, id 属性. 字符串, 用于设置搜索标记.<br>opacity 属性. 数字, 用于设置透明度.<br>scaleX, scaleY 属性. 数字, 用于设置缩放变换.<br>rotation 属性. 数字, 用于设置旋转角度.<br>draggable 属性. 布尔类型, 用于设置是否允许拖拽.<br>lineJoin, lineCap 属性. 设置线样式.<br>常用方法:</p>
+<p>Konva 中构造函数的属性多半有同名的方法.<br>toJSON() 方法. 将动画转换成 json 字符串.<br>to( params ) 方法. 使用 Tween 动画.<br>setAttrs( config ) 与 setAttr( attr, val ) 方法, 用于重新设置属性.<br>remove() 方法. 将当前对象删除, 但是销毁.<br>on( evtStr, handler ) 与 off( evtStr ) 方法, 用于添加与移除事件.<br>案例</p>
+<p>…<br>var rect = new Konva.Rect({<br>x: 100, y: 100,<br>width: 200, height: 100,<br>stroke: ‘red’, fill: ‘pink’<br>});<br>layer.add( rect );<br>…<br>2.2. 圆 Circle</p>
+<p>创建语法: new Konva.Circle( config )</p>
+<p>常用属性:</p>
+<p>radius 属性. 数字类型, 用于设置半径.<br>fill, stroke 属性.<br>strokeWidth 属性.<br>lineJoin, lineCap 属性.<br>dash 属性.<br>x, y 属性<br>常用方法:</p>
+<p>2.3. 椭圆 Ellipse</p>
+<p>创建语法: new Konva.Ellipse( config ).</p>
+<p>常用属性:</p>
+<p>x, y 属性. 数字类型, 表示椭圆中心的坐标<br>radius 属性. 对象类型, x, y 分别表示椭圆的长轴与短轴.<br>案例</p>
+<p>var ellipse = new Konva.Ellipse({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>radius: {<br>x: 100, y: 100<br>},<br>stroke: ‘red’,<br>fill: ‘pink’,<br>rotation: 30<br>});<br>效果</p>
+<p>2.4. 楔形 Wedge</p>
+<p>创建语法: new Konva.Wedge( config )</p>
+<p>常用属性:</p>
+<p>angle 属性. 表示楔形的角度. 角度带有方向, 水平向右为 0 度. 使用角度单位.<br>radius 属性. 表示半径.<br>clockwise 属性. 表示方向.<br>x, y, lineJoin, lineCap, fill, stroke, …<br>常用方法:</p>
+<p>案例</p>
+<p>…<br>var data = [ .3, .4, .2, .1 ];<br>var colors = ‘red, pink, green, blue’.split( ‘,’ );<br>var startAngle = -90;<br>data.forEach( function ( v, i ) {<br>var wedge = new Konva.Wedge({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>radius: 100,<br>angle: startAngle + 360 * v,<br>rotation: startAngle,<br>fill: colors[ i ],<br>opacity: .8<br>});</p>
+<p>startAngle += 360 * v;<br>layer.add( wedge );<br>});<br>…<br>效果</p>
+<p>2.5. 线段 Line</p>
+<p>线段有折现, 曲线与闭合线路的用法.</p>
+<p>创建语法: new Konva.Line( config )</p>
+<p>常用属性:</p>
+<p>points 属性. 数组, 用于存储折线的各个点的坐标.<br>tension 属性. 数字类型, 用于表示曲线连线. 默认为 0.<br>closed 属性. 布尔值, 用于表示是否闭合路径.<br>x, y 属性. 用于设置绘制直线时的参考坐标原点.<br>常用方法:</p>
+<p>说明:</p>
+<p>使用 Konva.Line 构造函数创建直线.<br>使用 Konva.Line 构造函数与 closed = true 属性可以创建多边形.<br>使用 Konva.Line 构造函数与 tension 属性可以创建曲线板.<br>使用 Konva.Line 构造函数与 tension 属性, 以及 closed = true 可以创建气泡.<br>案例</p>
+<p>var line = new Konva.Line({<br>x: 100, y: 100,<br>points: [ 10, 0, 100, 100, 200, 0 ],<br>tension: 1,<br>stroke: ‘red’<br>});<br>layer.add( line );</p>
+<p>var rect = new Konva.Line({<br>x: 300, y: 100,<br>points: [ 0, 0, 100, 0, 100, 100, 0, 100 ],<br>closed: true,<br>stroke: ‘red’<br>});<br>layer.add( rect );<br>效果</p>
+<p>2.6. 图片 Image</p>
+<p>创建语法: new Konva.Image( config )</p>
+<p>常用属性:</p>
+<p>x, y, width, height<br>image 属性. 用于设置图片对象.<br>crop 属性. 对象: { x, y, width, height }. 表示裁剪.<br>2.7. 文本 Text</p>
+<p>创建语法: new Konva.Text( config )</p>
+<p>常用属性:</p>
+<p>fontFamily 属性.<br>fontSize 属性.<br>fontStyle 属性.<br>fontVariant 属性<br>text 属性. 用于设置文本内容.<br>align 属性. 可选值: left, center, right.<br>padding 属性.<br>lineHeight 属性.<br>x, y 属性<br>案例</p>
+<p>// 创建文本<br>var txt = new Konva.Text({<br>x: 100, y: 100,<br>align: ‘left’,<br>text: ‘测试文本’,<br>fontSize: 30,<br>padding: 10,<br>width: 200,<br>height: 200</p>
+<p>});<br>layer.add( txt );</p>
+<p>var rect = new Konva.Rect({<br>x: 100, y: 100,<br>width: 200, height: 200,<br>stroke: ‘red’<br>});<br>layer.add( rect );<br>效果</p>
+<p>2.8. 星星 Star</p>
+<p>创建语法: new Konva.Star( config )</p>
+<p>常用属性:</p>
+<p>x, y<br>numPoints 属性. 表示 几角星.<br>innerRadius 属性. 表示内半径.<br>outerRadius 属性. 表示外半径.<br>旋转的五角星</p>
+<p>var star = new Konva.Star({<br>x: stage.getWidth() / 2,<br>y: stage.getHeight() / 2,<br>numPoints: 5,<br>outerRadius: 100,<br>innerRadius: 50,<br>stroke: ‘red’,<br>fill: ‘lightgreen’<br>});<br>layer.add( star );</p>
+<p>var tween = new Konva.Tween({<br>node: star,<br>rotation: 360,<br>duration: 2,<br>onFinish: function () {<br>this.reset();<br>this.play();<br>}<br>});<br>tween.play();<br>效果</p>
+<p>2.9. 圆环 Ring</p>
+<p>创建语法: new Konva.Ring( config )</p>
+<p>常用属性:</p>
+<p>innerRadius, outerRadius<br>clockwise<br>案例</p>
+<p>var ring = new Konva.Ring({<br>x: width / 2,<br>y: height / 2,<br>innerRadius: 50,<br>outerRadius: 100,<br>fill: ‘pink’,<br>stroke: ‘blue’,<br>});<br>layer.add( ring );<br>效果</p>
+<p>2.10. 圆弧 Arc</p>
+<p>创建语法: new Konva.Arc( config )</p>
+<p>常用属性:</p>
+<p>innerRadius, outerRadius<br>angle<br>案例</p>
+<p>var arc = new Konva.Arc({<br>x: width / 2,<br>y: height / 2,<br>innerRadius: 70,<br>outerRadius: 100,<br>stroke: ‘green’,<br>fill: ‘pink’,<br>angle: 60,<br>rotation: -90<br>});<br>layer.add( arc );<br>效果</p>
+<p>2.11. 正多边形 Regular Polygon</p>
+<p>创建语法: new Konva.RegularPolygon( config )</p>
+<p>常用属性:</p>
+<p>sides 属性. 表示多边形的边数.<br>radius 属性.<br>案例</p>
+<p>var shape = new Konva.RegularPolygon({<br>x: width / 2, y: height / 2,<br>sides: 6,<br>radius: 100,<br>fill: ‘pink’,<br>stroke: ‘blue’<br>});<br>layer.add( shape );<br>效果</p>
+<p>2.12. 箭头 Arrow</p>
+<p>创建语法: new Konva.Arrow( config )</p>
+<p>常用属性:</p>
+<p>points 属性<br>tension 属性<br>pointerLength 属性. 表示箭头的长度.<br>pointerWidth 属性. 表示箭头的宽度.<br>案例</p>
+<p>var rect1 = new Konva.Rect({<br>x: width / 4 - 50,<br>y: height / 4 - 25,<br>stroke: ‘#000’,<br>width: 100,<br>height: 50,<br>fill: ‘pink’,<br>opacity: .5<br>});<br>layer.add( rect1 );</p>
+<p>var txt1 = new Konva.Text({<br>x: width / 4 - 50,<br>y: height / 4 - 6,<br>fontSize: 12,<br>text: ‘Object 构造函数’,<br>align: ‘center’,<br>width: 100,<br>height: 50<br>});<br>layer.add( txt1 );</p>
+<p>var rect2 = new Konva.Rect({<br>x: width <em> 3 / 4 - 50,<br>y: height </em> 3 / 4 - 25,<br>stroke: ‘#000’,<br>width: 100,<br>height: 50,<br>fill: ‘pink’,<br>opacity: .5<br>});<br>layer.add( rect2 );</p>
+<p>var txt2 = new Konva.Text({<br>x: width <em> 3 / 4 - 50,<br>y: height </em> 3 / 4 - 6,<br>fontSize: 12,<br>text: ‘Object.prototype’,<br>align: ‘center’,<br>width: 100,<br>height: 50<br>});<br>layer.add( txt2 );</p>
+<p>var arrow = new Konva.Arrow({<br>points: [<br>width / 4 + 50,<br>height / 4,</p>
+<p>width / 2,<br>height / 4,</p>
+<p>width / 2,<br>height * 3 / 4,</p>
+<p>width <em> 3 / 4 - 50 - 7,<br>height </em> 3 / 4<br>],<br>pointerLength: 15,<br>pointerWidth: 6,<br>fill: ‘#ccc’,<br>stroke: ‘#ccc’,<br>lineWidth: .7<br>});</p>
+<p>layer.add( arrow );<br>效果</p>
+<ol>
+<li>组 Group<br>创建语法: new Konva.Group( config )</li>
+</ol>
+<p>常用属性:</p>
+<p>x, y, width, height<br>rotation, draggable<br>案例</p>
+<p>var group = new Konva.Group({<br>x: 100, y: 100,<br>width: 100,<br>height: 100<br>});<br>layer.add( group );<br>group.add( new Konva.Rect({<br>x: 0, y: 0, width: 100, height: 100,<br>fill: ‘red’, stroke: ‘blue’<br>}) );<br>注意: 放在 group 中的形状使用 group 作为参考坐标.</p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/Web技术/">Web技术</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/KonvaJs/" title="KonvaJs">KonvaJs</a>
+    
+
+        </span>
+    </p>
+</article>
+<div class="article-share clearfix text-center">
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2017/04/11/正则表达式/">
+            
+                正则表达式
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2017/04/08/git使用/">
+            
+                git工具
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(12)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/KonvaJs/" title="KonvaJs">KonvaJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NodeJs/" title="NodeJs">NodeJs (1)</a>
+  
+    <a class="tag-item" href="/tags/NPM/" title="NPM">NPM (1)</a>
+  
+    <a class="tag-item" href="/tags/angular/" title="angular">angular (1)</a>
+  
+    <a class="tag-item" href="/tags/git/" title="git">git (2)</a>
+  
+    <a class="tag-item" href="/tags/githug/" title="githug">githug (2)</a>
+  
+    <a class="tag-item" href="/tags/es6/" title="es6">es6 (1)</a>
+  
+    <a class="tag-item" href="/tags/css3/" title="css3">css3 (1)</a>
+  
+    <a class="tag-item" href="/tags/node/" title="node">node (1)</a>
+  
+    <a class="tag-item" href="/tags/sublime/" title="sublime">sublime (2)</a>
+  
+    <a class="tag-item" href="/tags/命令/" title="命令">命令 (1)</a>
+  
+    <a class="tag-item" href="/tags/vue/" title="vue">vue (1)</a>
+  
+    <a class="tag-item" href="/tags/常用功能/" title="常用功能">常用功能 (1)</a>
+  
+    <a class="tag-item" href="/tags/链接/" title="链接">链接 (1)</a>
+  
+    <a class="tag-item" href="/tags/正则/" title="正则">正则 (1)</a>
+  
+    <a class="tag-item" href="/tags/性能优化/" title="性能优化">性能优化 (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+    <!-- 我的微博 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>我的微博</strong></h3>
+        <div class="widget-bd" style="position: relative;">
+  <div id="myWeiboLoading" class="text-center" style="position:absolute;top:0;left:0;right:0;bottom:0;line-height:50px;font-size:12px;background-color:#fff;z-index:9;">微博加载中...</div>
+  <iframe id="myWeibo" width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2376003112&verifier=796ea597&dpc=1"></iframe>
+  <script>
+  (function () {
+    var oMyWeibo = document.getElementById('myWeibo');
+    var oMyWeiboLoading = document.getElementById('myWeiboLoading');
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    var timer = null;
+    if (isIE) {
+      oMyWeibo.onreadystatechange = function(){
+        if(oMyWeibo.readyState === 'loaded' || oMyWeibo.readyState === 'complete'){
+          timer = setTimeout(function () {
+            oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+            timer = null;
+          }, 300);
+        }
+      };
+    } else {
+      oMyWeibo.onload = function () {
+        timer = setTimeout(function () {
+          oMyWeiboLoading.parentNode.removeChild(oMyWeiboLoading);
+          timer = null;
+        }, 300);
+      };
+    }
+  })();
+  </script>
+</div>
+    </section>
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2017
+    
+
+    <a href="/">sinli Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+<!-- 添加百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
